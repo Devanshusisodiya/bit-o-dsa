@@ -75,6 +75,8 @@ void main(){
     // IMPLEMENTING MENU DRIVEN, TESTING SEQUENTIALLY
 
     // traverse(arr, len);
-    // delete(arr, 2, 1, len);
+    // delete(arr, element, index, len);
+    // linSearch(arr, element, len);
+
 
 }
