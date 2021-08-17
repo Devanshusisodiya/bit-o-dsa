@@ -90,6 +90,7 @@ void main(){
         printf("3. linear search\n");
         printf("4. binary search\n");
         printf("5. bubble sort\n");
+        printf("6. quit\n");
         printf("\nYour choice?");
         scanf("%d",&choice);
         switch(choice){
@@ -99,10 +100,12 @@ void main(){
             new = delete(arr, element, len);
             for(int i = 0; i < len-1; i++){
                 printf("%d\n", new[i]);
-            }          
+            } 
+            printf("\n");        
             break;
         case 2:
             traverse(arr, len);
+            printf("\n");
             break;
         case 3:
             printf("enter element to search : ");
@@ -113,6 +116,7 @@ void main(){
             }else{
                 printf("found at %d", index);
             }
+            printf("\n");
             break;
         case 4:
             printf("enter element to search : ");
@@ -123,14 +127,19 @@ void main(){
             }else{
                 printf("found at %d", index);
             }
+            printf("\n");
             break;
         case 5:
             new = bubbleSort(arr, len);
-            for(int i = 0; i < len-1; i++){
+            for(int i = 0; i < len; i++){
                 printf("%d\n", new[i]);
             }
+            printf("\n");
+            break;
+        case 6:
+            exit(0);
         default:
-            printf("\nInvalid Argument.\n");
+            printf("\ninvalid arg\n");
         }
     }while(choice != 4);
 
