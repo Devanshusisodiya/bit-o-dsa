@@ -70,9 +70,9 @@ void main(){
     for(int i = 0; i < len; i++){
         scanf("%d", &arr[i]);
     }
-    printf("\n");
+    printf("\n\n");
 
     // IMPLEMENTING MENU DRIVEN 
-    
+    traverse(arr, len);
 
 }
