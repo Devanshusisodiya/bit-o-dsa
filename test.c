@@ -52,7 +52,7 @@ int binSearch(int* arr, int element, int len){
 int* bubbleSort(int* arr, int len){
     for(int i = 0; i < len-1; i++){
         for(int j = 0; j < len-1; j++){
-            if(arr[j] < arr[j+1]){
+            if(arr[j] > arr[j+1]){
                 int temp = arr[j];
                 arr[j] = arr[j+1];
                 arr[j+1] = temp;
@@ -79,5 +79,10 @@ void main(){
     // delete(arr, element, index, len);
     // linSearch(arr, element, len);
     //binSearch(arr, element, len);
+
+    int* ptr = bubbleSort(arr, len);
+    for(int i = 0; i  < len; i++){
+        printf("%d\n",  ptr[i]);
+    }
 
 }

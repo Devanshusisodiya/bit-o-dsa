@@ -73,11 +73,12 @@ void main(){
     }
     printf("\n\n");
 
-    // IMPLEMENTING MENU DRIVEN, TESTING SEQUENTIALLY
+    // TESTING SEQUENTIALLY
 
     // traverse(arr, len);
     // delete(arr, element, index, len);
     // linSearch(arr, element, len);
-    //binSearch(arr, element, len);
+    // binSearch(arr, element, len);
+    // bubbleSort(arr, len);
 
 }
