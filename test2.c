@@ -43,6 +43,7 @@ int binSearch(int* arr, int element, int len){
             mid = low + 1;
         }if(element == arr[mid]){
             index = mid;
+            break;
         }
     }
     return index;
@@ -77,6 +78,6 @@ void main(){
     // traverse(arr, len);
     // delete(arr, element, index, len);
     // linSearch(arr, element, len);
-
+    //binSearch(arr, element, len);
 
 }
