@@ -72,7 +72,9 @@ void main(){
     }
     printf("\n\n");
 
-    // IMPLEMENTING MENU DRIVEN 
-    traverse(arr, len);
+    // IMPLEMENTING MENU DRIVEN, TESTING SEQUENTIALLY
+
+    // traverse(arr, len);
+    // delete(arr, 2, 1, len);
 
 }
