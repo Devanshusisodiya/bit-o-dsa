@@ -42,11 +42,13 @@ void push(struct stack* s, int element){
     }
 }
 
-void pop(struct stack* s){
+int pop(struct stack* s){
     if(isEmpty(s)){
         printf("stack empty");
+        return -1;
     }else{
         s->top = s->top - 1;
+        return s->arr[s->top];
     }
 }
 
@@ -69,13 +71,16 @@ void main() {
         printf("%d", s->arr[i]);
     }
 
-    pop(s);
+    int popped = pop(s);
 
-    printf("after pop \n");
+    printf("\n\nafter pop\n\n");
 
     for(int i = 0; i < s->top+1; i++){
         printf("%d", s->arr[i]);
     }
+
+    printf("\n\n");
+    printf("popped element %d", popped);
 
 
     // int k = 0, choice;
