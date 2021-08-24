@@ -140,7 +140,8 @@ void main(){
             exit(0);
         default:
             printf("\ninvalid arg\n");
+
         }
-    }while(choice != 4);
+    }while(choice != 6);
 
 }
