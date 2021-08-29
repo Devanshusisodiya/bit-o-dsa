@@ -62,43 +62,23 @@ void main() {
 
     printf("\n\ncompiled\n\n");
 
-    push(s, 1);
-    push(s, 2);
-    push(s, 3);
-    push(s, 4);
+    // taking stack input
+    for(int i = 0; i < size; i++){
+        int element;
+        printf("enter : ");
+        scanf("%d", &element);
+        push(s, element);
+    }
+    printf("\n");
 
+    //displaying stack
     for(int i = 0; i < s->top+1; i++){
         printf("%d", s->arr[i]);
     }
+    printf("\n");
 
-    int popped = pop(s);
+    //overflow
+    push(s, 69);     // :)
 
-    printf("\n\nafter pop\n\n");
-
-    for(int i = 0; i < s->top+1; i++){
-        printf("%d", s->arr[i]);
-    }
-
-    printf("\n\n");
-    printf("popped element %d", popped);
-
-
-    // int k = 0, choice;
-    // do{
-    //     printf("print \n");
-    //     printf("enter \n");
-    //     printf("3 to quit\n");
-    //     scanf("%d", &choice);
-    //     switch (choice){
-    //     case 1:
-    //         printf("%d", k);
-    //         break;
-    //     case 2:
-    //         scanf("%d", &k);
-    //     default:
-    //         printf("\n");
-    //         // break;
-    //     }
-    // }while(choice != 3);
 
 }

@@ -1,147 +1,170 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<>
 
-void traverse(int* arr, int len){
-    for(int i = 0; i < len; i++){
-        printf("%d\n", arr[i]);
+void sum(int ma1[10][10],int ma2[10][10],int m,int n,int p,int q)
+{
+    int s[10][10],i,j,k;
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<p;j++)
+        {
+            s[i][j]=0;
+            for(k=0;k<n;k++)
+            {
+            s[i][j]=ma1[i][j]+ma2[i][j];
+            }
+        }
     }
-    printf("\n");
+    printf("the added matrix\n");
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<p;j++)
+        {
+            printf("%d",s[i][j]);
+        }
+        printf("\n");
 }
 
-int* delete(int *arr, int element, int len){
+// void diff(int mat1[10][10],int mat2[10][10],int m,int n,int p,int q){
+//     int d[10][10],i,j,k;
+//     for(i=0;i<m;i++)
+//     {
+//         for(j=0;j<p;j++)
+//         {
+//             d[i][j]=0;
+//             for(k=0;k<n;k++)
+//             {
+//             d[i][j]=mat2[i][j]-mat1[i][j];
+//             }
+//         }
+//     }
+//     printf("the subtracted matrix\n");
+//     for(i=0;i<m;i++)
+//     {
+//         for(j=0;j<p;j++)
+//         {
+//             printf("%d",d[i][j]);
+//         }
+//         printf("\n");
+// }
+
+// void multiply(int m1[10][10],int m2[10][10],int m,int n,int p,int q)
+// {
+//     int mul[10][10],i,j,k;
+//     for(i=0;i<m;i++)
+//     {
+//         for(j=0;j<p;j++)
+//         {
+//             mul[i][j]=0;
+//             for(k=0;k<n;k++)
+//             {
+//                 mul[i][j]=mul[i][j] + m1[i][k]*m2[k][j];   
+//             }
+//         }
+//     }
+
+//     printf("the multiplied matrix\n");
+//     for(i=0;i<m;i++)
+//     {
+//         for(j=0;j<p;j++)
+//         {
+//             printf("%d",mul[i][j]);
+//         }
+//         printf("\n");
+
+//     }
+// }
+
+void main(){ 
+    int ch,n;
+    printf("Enter a Number : ");
+    scanf("%d",&n);
+    printf("\n\nChoose from the following :\n1) sum of 2 array\n2) difference of 2 array\n3) multiplication of 2 array\n4) Exit\n\t");
+    scanf("%d",&ch);
+    switch(ch){
+        case 1 :
+                int m,n,p,q,i,j;
+                int ma1[10][10],ma2[10][10];
+                printf("enter the number of rows and columns for m1\n");
+                scanf("%d %d",&m,&n);
+                printf("fill the m1");
+                for(i=0;i<m;i++)
+                {
+                    for(j=0;j<n;j++)
+                    {
+                        scanf("%d",&m1[i][j]);
+                    }
+                }
+                printf("enter the number of rows and columns for m2\n");
+                scanf("%d %d",&p,&q);
+                printf("fill the m2");
+                for(i=0;i<p;i++)
+                {
+                    for(j=0;j<q;j++)
+                    {
+                        scanf("%d",&m2[i][j]);
+                    }
+                }
+                sum(ma1,ma2,m,n,p,q);
+                break;
+                case 2 :
+                int m,n,p,q,i,j;
+                int ma1[10][10],ma2[10][10];
+                printf("enter the number of rows and columns for m1\n");
+                scanf("%d %d",&m,&n);
+                printf("fill the m1");
+                for(i=0;i<m;i++)
+                {
+                    for(j=0;j<n;j++)
+                    {
+                        scanf("%d",&m1[i][j]);
+                    }
+                }
+                printf("enter the number of rows and columns for m2\n");
+                scanf("%d %d",&p,&q);
+                printf("fill the m2");
+                for(i=0;i<p;i++)
+                {
+                    for(j=0;j<q;j++)
+                    {
+                        scanf("%d",&m2[i][j]);
+                    }
+                }
+                diff(int ma1,int ma2,m,n,p,q);
+                break;
+                case 3 :
+                int m,n,p,q,i,j;
+                int m1[10][10],m2[10][10];
+                printf("enter the number of rows and columns for m1\n");
+                scanf("%d %d",&m,&n);
+                printf("fill the m1");
+                for(i=0;i<m;i++)
+                {
+                    for(j=0;j<n;j++)
+                    {
+                        scanf("%d",&m1[i][j]);
+                    }
+                }
+                printf("enter the number of rows and columns for m2\n");
+                scanf("%d %d",&p,&q);
+                printf("fill the m2");
+                for(i=0;i<p;i++)
+                {
+                    for(j=0;j<q;j++)
+                    {
+                        scanf("%d",&m2[i][j]);
+                    }
+                }
+                if(n==p)
+                {
+                multiply(m1,m2,m,n,p,q);
+                }
+                else
+                {
+                    printf("number of col of m1 should be equal to number of rows of m2");
+                }
+                break;
+                default : printf("\nINVALID Choice\n");
+    }
     
-    int index = -1;
-    for(int k = 0; k < len; k++){
-        if(arr[k] == element){
-            index = k;
-        }
-    }
-    int i = 0;
-    for(int j = 0; j < len; j++){
-        if(j == index){
-            continue;
-        }else{
-            arr[i] = arr[j];
-            i += 1;
-        }
-    }
-    return arr;
-}
-
-int linSearch(int* arr, int element, int len){
-    int index = -1;
-    for(int i = 0; i < len; i++){
-        if(arr[i] == element){
-            index = i;
-        }
-    }
-    return index;
-}
-
-int binSearch(int* arr, int element, int len){
-    int index = -1;
-    int low = 0;
-    int high = len;
-    while(low <= high){
-        int mid = (low + high)/2;
-        if(element < arr[mid]){
-            mid = high - 1;
-        }if(element > arr[mid]){
-            mid = low + 1;
-        }if(element == arr[mid]){
-            index = mid;
-            break;
-        }
-    }
-    return index;
-}
-
-int* bubbleSort(int* arr, int len){
-    for(int i = 0; i < len-1; i++){
-        for(int j = 0; j < len-1; j++){
-            if(arr[j] > arr[j+1]){
-                int temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
-            }
-        }
-    }
-    return arr;
-}
-
-void main(){
-
-    int len;
-    scanf("%d\n", &len);
-    int arr[len];
-    
-    for(int i = 0; i < len; i++){
-        scanf("%d", &arr[i]);
-    }
-    printf("\n\n");
-
-    // TESTING SEQUENTIALLY
-  
-  
-    int choice, element, *new, index;
-    do{
-        printf("1. delete\n");
-        printf("2. traverse\n");
-        printf("3. linear search\n");
-        printf("4. binary search\n");
-        printf("5. bubble sort\n");
-        printf("6. quit\n");
-        printf("\nYour choice?");
-        scanf("%d",&choice);
-        switch(choice){
-        case 1:
-            printf("enter element to delete : ");
-            scanf("%d", &element);
-            new = delete(arr, element, len);
-            for(int i = 0; i < len-1; i++){
-                printf("%d\n", new[i]);
-            } 
-            printf("\n");        
-            break;
-        case 2:
-            traverse(arr, len);
-            printf("\n");
-            break;
-        case 3:
-            printf("enter element to search : ");
-            scanf("%d", &element);
-            index = linSearch(arr, element, len);
-            if(index == -1){
-                printf("element not present\n");
-            }else{
-                printf("found at %d", index);
-            }
-            printf("\n");
-            break;
-        case 4:
-            printf("enter element to search : ");
-            scanf("%d", &element);
-            index = binSearch(arr, element, len);
-            if(index == -1){
-                printf("element not present\n");
-            }else{
-                printf("found at %d", index);
-            }
-            printf("\n");
-            break;
-        case 5:
-            new = bubbleSort(arr, len);
-            for(int i = 0; i < len; i++){
-                printf("%d\n", new[i]);
-            }
-            printf("\n");
-            break;
-        case 6:
-            exit(0);
-        default:
-            printf("\ninvalid arg\n");
-
-        }
-    }while(choice != 6);
-
 }
