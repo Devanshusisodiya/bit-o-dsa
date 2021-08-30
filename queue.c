@@ -60,6 +60,42 @@ int deQueue(struct queue* queue){
     }
 }
 
-void main() {
+int front(struct queue* queue){
+    return queue->arr[queue->front];
+}
 
+int rear(struct queue* queue){
+    return queue->arr[queue->rear];
+}
+
+
+void main() {
+    struct queue* q = createQueue(5);
+    int ctr = 0;
+
+    int choice, element;
+    do{
+        printf("1. enqueue\n");
+        printf("2. dequeue\n");
+        printf("3. front\n");
+        printf("4. rear\n");
+        scanf("%d", &choice);
+        switch(choice){
+            case 1:
+                scanf("%d", &element);
+                enQueue(q, element);
+                break;
+            case 2:
+                deQueue(q);
+                break;
+            case 3:
+                printf("\nfront : %d\n", front(q));
+                break;
+            case 4:
+                printf("\nrear : %d\n", rear(q));
+                break;
+            default:
+                break;
+        }
+    }while(ctr == 0);
 }
