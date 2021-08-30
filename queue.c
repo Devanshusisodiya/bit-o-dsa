@@ -46,11 +46,17 @@ void enQueue(struct queue* queue, int element){
     }
 }
 
-void deQueue(struct queue* queue, int element){
+int deQueue(struct queue* queue){
     if(isEmpty(queue) == 1){
         printf("queue is empty");
+        return -1;
     }else{
-        
+        int deQueued = queue->arr[queue->front];
+        for(int i = 0; i < queue->rear + 1; i++){
+            queue->arr[i] = queue->arr[i+1];
+        }
+        queue->rear = queue->rear - 1;
+        return deQueued;
     }
 }
 
